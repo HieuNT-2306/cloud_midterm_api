@@ -1,1 +1,0 @@
-File này để kiểm tra xem github workflow có thực hiện đúng hay không.
