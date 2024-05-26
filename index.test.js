@@ -6,19 +6,12 @@ const mongoose = require('mongoose');
 const mongoServer = new MongoMemoryServer();
 
 beforeAll(async () => {
-    await mongoServer.start();
-    const mongoUri = mongoServer.getUri();
-    await mongoose.connect(mongoUri);
- });
+    await mongoose.connect(process.env.MONGO_URL);
+});
 
- let userId;
+let userId;
 
 describe('Test client API', () => {
-    test('Lấy tất cả bản ghi', async () => {
-        const response = await request(app).get('/user/get');
-        expect(response.statusCode).toBe(200);
-        expect(Array.isArray(response.body)).toBeTruthy();
-    });
 
     test('Tạo 1 bản ghi mới', async () => {
         const newUser = {
@@ -32,6 +25,19 @@ describe('Test client API', () => {
         expect(response.body.newUser.name).toBe(newUser.name);
         expect(response.body.newUser.gender).toBe(newUser.gender);
         expect(response.body.newUser.school).toBe(newUser.school);
+    });
+
+    test('Lấy 1 bản ghi', async () => {
+        const response = await request(app).get('/user/get');
+        expect(response.statusCode).toBe(200);
+        expect(Array.isArray(response.body)).toBeTruthy();
+    });
+
+    test('Lấy 1 bản ghi theo id', async () => {
+        const id = userId;
+        const response = await request(app).get(`/user/get/${id}`);
+        expect(response.statusCode).toBe(200);
+        expect(response.body._id).toBe(userId);
     });
 
     test('Sửa 1 bản ghi', async () => {
@@ -58,5 +64,4 @@ describe('Test client API', () => {
 
 afterAll(async () => {
     await mongoose.connection.close();
-    await mongoServer.stop();
 });

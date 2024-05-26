@@ -2,10 +2,25 @@ import User from "../models/user.js";
 
 export const getUsers = async (req, res) => {
     try {
-        const user = await User.find();
-        res.status(200).json(user);
+        const users = await User.find();
+        res.status(200).json(users);
     } catch (error) {
         console.log(error);
+        res.status(404).json({
+            message: error.message,
+        });
+    }
+}
+
+export const getUserById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+        res.status(200).json(user);
+    } catch (error) {
         res.status(404).json({
             message: error.message,
         });
@@ -18,7 +33,6 @@ export const postUser = async (req, res) => {
         const { _id, name, gender, school } = req.body;
         console.log(req.body)
         if (!_id) {
-            console.log("new user");
             const newUser = new User({
                 name, gender, school,
             });
@@ -26,7 +40,6 @@ export const postUser = async (req, res) => {
             res.status(201).json({ newUser });
         }
         else {
-            console.log("update user");
             const user = await User.findById(_id);
             if (!user) {
                 return res.status(404).json({ message: 'User not found' });
@@ -34,7 +47,6 @@ export const postUser = async (req, res) => {
             if (name) user.name = name;
             if (gender) user.gender = gender;
             if (school) user.school = school;
-
             const updatedUser = await user.save();
             return res.json({ updatedUser });
         }

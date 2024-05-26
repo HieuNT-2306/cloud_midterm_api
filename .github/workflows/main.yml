@@ -30,7 +30,7 @@ jobs:
     - name: Run Tests
       run: npm test
 
-  deploy:
+  deploy local:
     needs: test
     runs-on: ubuntu-latest
 
