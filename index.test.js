@@ -6,8 +6,10 @@ const mongoose = require('mongoose');
 const mongoServer = new MongoMemoryServer();
 
 beforeAll(async () => {
-    await mongoose.connect(process.env.MONGO_URL);
-});
+    await mongoServer.start();
+    const mongoUri = mongoServer.getUri();
+    await mongoose.connect(mongoUri);
+ });
 
 let userId;
 
@@ -27,18 +29,19 @@ describe('Test client API', () => {
         expect(response.body.newUser.school).toBe(newUser.school);
     });
 
-    test('Lấy 1 bản ghi', async () => {
+    test('Lấy tất cả bản ghi', async () => {
         const response = await request(app).get('/user/get');
         expect(response.statusCode).toBe(200);
         expect(Array.isArray(response.body)).toBeTruthy();
     });
 
-    test('Lấy 1 bản ghi theo id', async () => {
+    test('Lấy 1 bản ghi', async () => {
         const id = userId;
-        const response = await request(app).get(`/user/get/${id}`);
+        const response = await request(app).get(`/user/${id}`);
         expect(response.statusCode).toBe(200);
-        expect(response.body._id).toBe(userId);
+        expect(response.body.user._id).toBe(userId);
     });
+    
 
     test('Sửa 1 bản ghi', async () => {
         const updatedUser = {
@@ -64,4 +67,5 @@ describe('Test client API', () => {
 
 afterAll(async () => {
     await mongoose.connection.close();
+    await mongoServer.stop();
 });
