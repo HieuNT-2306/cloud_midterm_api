@@ -5,7 +5,6 @@ export const getUsers = async (req, res) => {
         const users = await User.find();
         res.status(200).json(users);
     } catch (error) {
-        console.log(error);
         res.status(404).json({
             message: error.message,
         });
@@ -31,7 +30,6 @@ export const getUserById = async (req, res) => {
 export const postUser = async (req, res) => {
     try {
         const { _id, name, gender, school } = req.body;
-        console.log(req.body)
         if (!_id) {
             const newUser = new User({
                 name, gender, school,
