@@ -37,11 +37,11 @@ describe('Test client API', () => {
 
     test('Lấy 1 bản ghi', async () => {
         const id = userId;
-        const response = await request(app).get(`/user/${id}`);
+        const response = await request(app).get(`/user/get/${id}`);
         expect(response.statusCode).toBe(200);
-        expect(response.body.user._id).toBe(userId);
+        expect(response.body._id).toBe(id);
     });
-    
+
 
     test('Sửa 1 bản ghi', async () => {
         const updatedUser = {
