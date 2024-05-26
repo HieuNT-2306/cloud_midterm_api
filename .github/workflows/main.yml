@@ -26,7 +26,7 @@ jobs:
 
 
   deploy-local:
-    needs: test
+    needs: build-and-test
     runs-on: ubuntu-latest
 
     steps:
