@@ -53,7 +53,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: HieuNT-2306/cloud_final_helm_api
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
         path: cloud_final_helm_api
 
     - name: Update values.yaml
