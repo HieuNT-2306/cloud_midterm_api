@@ -16,6 +16,7 @@ export const getUserById = async (req, res) => {
         const { id } = req.params;
         const user = await User.findById(id);
         if (!user) {
+            logger.error(`User not found: ${id}`);
             return res.status(404).json({ message: 'User not found' });
         }
         res.status(200).json(user);
@@ -49,7 +50,6 @@ export const postUser = async (req, res) => {
             return res.json({ updatedUser });
         }
     } catch (error) {
-        console.log(error);
         res.status(404).json({
             message: error.message,
         });

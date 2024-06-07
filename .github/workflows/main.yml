@@ -2,7 +2,8 @@ name: Run Tests
 
 on:
   push:
-    branches: [ '*' ]
+    tags:
+      - '*'
   pull_request:
     branches: [ main ]
 
@@ -47,6 +48,26 @@ jobs:
         context: .
         push: true
         tags: hieubeo2369/api:latest
+
+    - name: Checkout helm config repo
+      uses: actions/checkout@v2
+      with:
+        repository: HieuNT-2306/cloud_final_helm_api
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: cloud_final_helm_api
+
+    - name: Update values.yaml
+      run: |
+        sed -i 's/tag: .*/tag: ${{ github.ref_name }}/' cloud_final_helm_api/web/values.yaml
+
+    - name: Commit and push changes
+      run: |
+        cd cloud_final_helm_api
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .
+        git commit -m "Update image tag to ${{ github.ref_name }}"
+        git push
 
     - name: Run Docker container on port 5003 on local
       run: |
