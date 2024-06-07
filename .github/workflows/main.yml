@@ -69,7 +69,7 @@ jobs:
         git config --global user.email 'github-actions@github.com'
         git add .
         git commit -m "Update image tag to ${{ github.ref_name }}"
-        git push
+        git push origin master
 
     - name: Run Docker container on port 5003 on local
       run: |
