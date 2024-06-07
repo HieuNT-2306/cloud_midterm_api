@@ -65,9 +65,9 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       run: |
         cd cloud_final_helm_api
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add .
+        git config --global user.name '${{ secrets.USER_NAME }}'
+        git config --global user.email '${{ secrets.USER_EMAIL }}'
+        git add -A
         git commit -m "Update image tag to ${{ github.ref_name }}"
         git push origin master
 
