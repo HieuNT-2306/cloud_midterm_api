@@ -58,7 +58,7 @@ jobs:
 
     - name: Update values.yaml
       run: |
-        sed -i 's/tag: .*/tag: ${{ github.ref_name }}/' cloud_final_helm_api/web/values.yaml
+        sed -i 's/tag: .*/tag: ${{ github.ref_name }}/' cloud_final_helm_api/api/values.yaml
 
     - name: Commit and push changes
       run: |
