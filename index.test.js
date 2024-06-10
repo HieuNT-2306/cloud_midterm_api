@@ -61,7 +61,7 @@ describe('Test client API', () => {
         const id = userId;
         const response = await request(app).delete(`/user/${id}`);
         expect(response.statusCode).toBe(200);
-        expect(response.body.message).toBe('User deleted successfully');
+        expect(response.body.message).toBe('Student deleted successfully');
     });
 });
 
