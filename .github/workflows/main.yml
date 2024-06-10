@@ -71,4 +71,4 @@ jobs:
         git add -A
         git commit -m "Update image tag to ${{ github.ref_name }}"
         git push origin master
-        
+  
