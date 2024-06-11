@@ -35,7 +35,7 @@ app.use(cookieParser());
 const CLIENT_URL = process.env.CLIENT_URL;
 app.use(cors({credentials: true, origin: CLIENT_URL}));
 
-app.use(limiter);
+app.use(limiter); 
 
 app.use("/user", clientRoutes);
 app.use("/auth", authRoutes);
