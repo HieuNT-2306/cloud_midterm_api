@@ -32,7 +32,9 @@ app.use(morgan('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
+const CLIENT_URL = process.env.CLIENT_URL;
+app.use(cors({credentials: true, origin: CLIENT_URL}));
+//app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
 
 app.use(limiter);
 
