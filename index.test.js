@@ -17,7 +17,7 @@ beforeAll(async () => {
 });
 
 let userId;
-let adminToken;
+let adminToken, userToken;
 
 describe('Test client API', () => {
 
@@ -25,16 +25,7 @@ describe('Test client API', () => {
         const response = await request(app)
             .post('/auth/login')
             .send({ username: 'admin', password: 'adminpassword' });
-        console.log(response.headers['set-cookie']);
         adminToken = response.headers['set-cookie'][0].split(';')[0].split('=')[1];
-        console.log(adminToken);    
-        expect(response.statusCode).toBe(200);
-    });
-
-    test('User login và lấy token', async () => {
-        const response = await request(app)
-            .post('/auth/login')
-            .send({ username: 'user', password: 'userpassword' });
         expect(response.statusCode).toBe(200);
     });
 
@@ -98,17 +89,20 @@ describe('Test client API', () => {
         expect(response.body.message).toBe('Student deleted successfully');
     });
 
-    test('Người dùng thường không thể tạo 1 bản ghi mới', async () => {
+    test('User login và lấy token', async () => {
+        const response = await request(app)
+            .post('/auth/login')
+            .send({ username: 'user', password: 'userpassword' });
+        userToken = response.headers['set-cookie'][0].split(';')[0].split('=')[1];
+        expect(response.statusCode).toBe(200);
+    });
+
+    test('User không thể tạo 1 bản ghi mới', async () => {
         const newUser = {
             name: 'Test User 2',
             gender: 'male',
             school: 'Test School 2'
         };
-        const loginResponse = await request(app)
-            .post('/auth/login')
-            .send({ username: 'user', password: 'userpassword' });
-        const userToken = loginResponse.headers['set-cookie'][0].split(';')[0].split('=')[1];
-
         const response = await request(app)
             .post('/user/post')
             .set('Cookie', `token=${userToken}`)
@@ -116,16 +110,23 @@ describe('Test client API', () => {
         expect(response.statusCode).toBe(403);
     });
 
-    test('Người dùng thường không thể xóa 1 bản ghi', async () => {
+    test('User không thể xóa 1 bản ghi', async () => {
         const id = userId;
-        const loginResponse = await request(app)
-            .post('/auth/login')
-            .send({ username: 'user', password: 'userpassword' });
-        const userToken = loginResponse.headers['set-cookie'][0].split(';')[0].split('=')[1];
-
         const response = await request(app)
             .delete(`/user/${id}`)
             .set('Cookie', `token=${userToken}`);
+        expect(response.statusCode).toBe(403);
+    });
+
+    test('User không thể sửa 1 bản ghi', async () => {
+        const updatedUser = {
+            _id: userId,
+            name: 'Updated User 2',
+        }
+        const response = await request(app)
+            .post('/user/post')
+            .set('Cookie', `token=${userToken}`)
+            .send(updatedUser);
         expect(response.statusCode).toBe(403);
     });
 });

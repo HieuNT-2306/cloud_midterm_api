@@ -141,3 +141,76 @@
 {"level":"info","message":"Deleted user: 66673528d18068bb5282adcd","method":"DELETE","path":"/user/66673528d18068bb5282adcd","responseCode":200}
 {"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
 {"level":"info","message":"Created new student","method":"POST","path":"/user/post/","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post/","responseCode":201}
+{"level":"error","message":"Student not found: 6653073a84c517d36705f7c3","method":"DELETE","path":"/user/6653073a84c517d36705f7c3","responseCode":404}
+{"level":"info","message":"Deleted user: 6667414d387028e2605db8ec","method":"DELETE","path":"/user/6667414d387028e2605db8ec","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::1","method":"GET","path":"/user/get","responseCode":409}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::1","method":"GET","path":"/user/get","responseCode":409}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::1","method":"GET","path":"/user/get","responseCode":409}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::1","method":"GET","path":"/user/get","responseCode":409}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::1","method":"GET","path":"/user/get","responseCode":409}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c6991d81c4bad58b8bb3","method":"GET","path":"/user/get/6667c6991d81c4bad58b8bb3","responseCode":200}
+{"level":"info","message":"Updated student: 6667c6991d81c4bad58b8bb3","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c6991d81c4bad58b8bb3","method":"DELETE","path":"/user/6667c6991d81c4bad58b8bb3","responseCode":200}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::ffff:127.0.0.1","method":"DELETE","path":"/user/6667c6991d81c4bad58b8bb3","responseCode":409}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c6c3fd274a934367c5aa","method":"GET","path":"/user/get/6667c6c3fd274a934367c5aa","responseCode":200}
+{"level":"info","message":"Updated student: 6667c6c3fd274a934367c5aa","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c6c3fd274a934367c5aa","method":"DELETE","path":"/user/6667c6c3fd274a934367c5aa","responseCode":200}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c6ea9b854d94ea587573","method":"GET","path":"/user/get/6667c6ea9b854d94ea587573","responseCode":200}
+{"level":"info","message":"Updated student: 6667c6ea9b854d94ea587573","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c6ea9b854d94ea587573","method":"DELETE","path":"/user/6667c6ea9b854d94ea587573","responseCode":200}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::ffff:127.0.0.1","method":"DELETE","path":"/user/6667c6ea9b854d94ea587573","responseCode":409}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c718bdef695add834568","method":"GET","path":"/user/get/6667c718bdef695add834568","responseCode":200}
+{"level":"info","message":"Updated student: 6667c718bdef695add834568","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c718bdef695add834568","method":"DELETE","path":"/user/6667c718bdef695add834568","responseCode":200}
+{"level":"error","message":"Rate limit exceeded for user with IP: ::ffff:127.0.0.1","method":"DELETE","path":"/user/6667c718bdef695add834568","responseCode":409}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c7c8664f1c819e7971b8","method":"GET","path":"/user/get/6667c7c8664f1c819e7971b8","responseCode":200}
+{"level":"info","message":"Updated student: 6667c7c8664f1c819e7971b8","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c7c8664f1c819e7971b8","method":"DELETE","path":"/user/6667c7c8664f1c819e7971b8","responseCode":200}
+{"level":"info","message":"Created new student","method":"POST","path":"/user/post","responseCode":201}
+{"level":"info","message":"Fetched all student from the database: ","method":"GET","path":"/user/get","responseCode":200}
+{"level":"info","message":"Fetched user with id: 6667c803a89ae8493887d43d","method":"GET","path":"/user/get/6667c803a89ae8493887d43d","responseCode":200}
+{"level":"info","message":"Updated student: 6667c803a89ae8493887d43d","method":"POST","path":"/user/post","responseCode":200}
+{"level":"info","message":"Deleted user: 6667c803a89ae8493887d43d","method":"DELETE","path":"/user/6667c803a89ae8493887d43d","responseCode":200}
