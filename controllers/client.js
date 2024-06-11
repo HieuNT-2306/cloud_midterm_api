@@ -3,7 +3,7 @@ import logger from "../helper/logger.js";
 
 export const getUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await User.find().select('-password');
         logger.info({
             message: 'Fetched all student from the database: ',
             path: req.originalUrl,
@@ -27,7 +27,7 @@ export const getUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
     try {
         const { id } = req.params;
-        const user = await User.findById(id);
+        const user = await User.findById(id).select('-password');
         if (!user) {
             logger.error({
                 message: `User not found: ${id}`,
